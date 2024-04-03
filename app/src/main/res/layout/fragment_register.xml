@@ -136,7 +136,7 @@
             app:layout_constraintBottom_toBottomOf="@id/GoogleLoginRegister"
             app:layout_constraintEnd_toEndOf="@id/GoogleLoginRegister"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/buttonRegisterHaveRegister"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
