@@ -5,6 +5,7 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.ecommerce"
-        minSdk 24
+        minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -37,6 +38,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -72,9 +77,11 @@ dependencies {
     implementation libs.androidx.navigation.fragment.ktx
 
     //Dagger hilt
-    implementation libs.hilt.android
+    implementation libs.hilt.android.v244
     kapt libs.dagger.hilt.compiler
-    kapt libs.kotlinx.metadata.jvm
+    kapt(libs.kotlinx.metadata.jvm)
+
+
 
     //Firebase
     implementation libs.firebase.auth
